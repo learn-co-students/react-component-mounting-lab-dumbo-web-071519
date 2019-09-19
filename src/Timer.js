@@ -7,13 +7,15 @@ class Timer extends Component {
     color: '#'+Math.floor(Math.random()*16777215).toString(16)
   }
 
-  // add your code here
+  // !This will run AFTER the first render, only ONCE
+  componentDidMount() {
+    console.log('I, a time has rendered dear sir')
+    this.interval = setInterval(this.clockTick, 1000);
+  }
 
-
-
-
-
-
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
 
   render() {
 
