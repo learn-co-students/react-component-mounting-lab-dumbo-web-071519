@@ -8,15 +8,22 @@ class Timer extends Component {
   }
 
   // add your code here
+  
 
+  componentDidMount(){
+    console.log("Timer did mount")
+    this.interval = setInterval(()=>this.clockTick(),1000)
+  }
 
-
-
+  componentWillUnmount(){
+    console.log("Timer did un-mount")
+    clearInterval(this.interval);
+  }
 
 
 
   render() {
-
+    console.log("Timer did render")
     const { time, color, className } = this.state
     return (
       <section className="Timer" style={{background: color}}>

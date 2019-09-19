@@ -12,7 +12,14 @@ class App extends Component {
 
   //Your code here:
 
+  componentDidMount() {
+    console.log("App did mount")
+    this.handleAddTimer()
+  }
 
+  componentWillUnmount() {
+    console.log("App did un-mount")
+  }
 
 
 
@@ -23,7 +30,7 @@ class App extends Component {
   // No need to modify anything in render or the class methods below
   // Unless, of course, you're curious about how it all works
   render() {
-
+    console.log("App did render")
     return (
       <div className="App">
         <h1>MultiTimer</h1>
